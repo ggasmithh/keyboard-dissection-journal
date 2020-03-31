@@ -36,6 +36,9 @@
             <a class="nav-link js-scroll-trigger" href="#market">Market Analysis</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#dissection">Dissection</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#operation">Operation</a>
           </li>
           <li class="nav-item">
@@ -100,12 +103,107 @@
     </div>
   </section>
 
-  <section id="photos">
+  <section id="dissection">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Photo Journal</h2>
-          <p class="lead">This is where the photo journal will go.</p>
+          <h2>Dissection</h2>
+          <p class="lead">For the dissection of the ZJTL Piano Toy Keyboard, I used the following tools:
+            <ul>
+              <li>Screwdriver</li>
+              <li>Silicone project mat with screw trays</li>
+              <li>work lamp</li>
+              <li>My trusty Opinel No. 6 pocket knife</li>
+              <li>Digital Kitchen Scale</li>
+              <li>iPhone 6s</li>
+            </ul>
+
+          </p>
+
+          <p class="lead">
+            <img src="img/journal/001.jpg" class="rounded img-fluid" alt="The keyboard, the included microphone, and the owner's manual">
+
+            We begin the dissection by removing the nine screws in the back of the piano's body, as well as the screw 
+            holding the battery compartment closed. I anticipate that the manufacturer has hidden a screw beneath it.
+          </p>
+
+          <h3>Front Matter</h3>
+          <p class="lead">
+            These screws seem particularly small, so I will be using a 000 Phillips Head bit.
+
+            <img src="img/journal/002.jpg" class="rounded img-fluid" alt="The back of the keyboard">
+            <img src="img/journal/003.jpg" class="rounded img-fluid" alt="The screw hiding in the battery compartment">
+
+            My previous suspicion confirmed. This brings the screw count up to 10, or 11 if you include the battery compartment cover's.
+
+            <img src="img/journal/004.jpg" class="rounded img-fluid" alt="The back of the keyboard with all screws removed">
+
+            Unscrewing these placed a concerning amount of mechanical strain on the body of the keyboard; All screws on 
+            the edge of the body caused a considerable amount of bowing of the plastic, as well as some creaking sounds. 
+            This may go without saying, but judging by the use of screws with pointed tips, I don't think the manufacturer 
+            intended for this keyboard to be disassembled. Additionally, the screws themselves were extremely soft—I stripped one with minimal torque.
+          </p>
+
+          <h3>The Reveal</h3>
+          <p class="lead">
+
+            I'm not sure what I was expecting, but it wasn't this. I understood that this would likely be a very simple system, not this simple.
+
+            <img src="img/journal/005.jpg" class="rounded img-fluid" alt="The keyboard, opened">
+            
+            Immediately, I notice that one of the speakers. . . well. . . does not actually exist; one of the sets of holes made for sound to pass through was included only for aesthetic purposes.
+
+            <img src="img/journal/006.jpg" class="rounded img-fluid" alt="The close up of the PCB inside the keyboard">
+
+            Additionally, it seems that all components are wired to this <it>one</it> board. I'm still wondering how this 
+            thing manages to have <it>twenty-four</it> demo songs stored on it, not to mention (what I assume at this stage of my understanding of this product) all the wave-tables for each instrument.
+
+            <img src="img/journal/007.jpg" class="rounded img-fluid" alt="The close up of the part number on the PCB">
+
+            Two things strike me as important from this image.
+
+            <ol>
+              <li>What appears to be some sort of ID of the board design itself.</li>
+              <li>The screenprinting on the IC</li>
+            </ol>
+          </p>
+          <p class="lead">
+            My camera phone is only capable of so much (and I have misplaced every free clip-on camera phone lens I have received from recruiters at job fairs), so you will have to trust me when I say that it reads:
+
+            <p class="text-monospace">
+              MPAK<br/>
+              LM386<br/>
+              M-1<br/>
+            </p>
+
+          </p>
+
+          <h3>A Quick Aside: Investigation of Parts</h3>
+          <p class="lead">
+            The part number and date listed on the board itself interested me the most, so I plugged it into a search engine:
+
+            <img src="img/journal/008.jpg" class="rounded img-fluid" alt="Duck Duck Go finding no results for the PCB's Part number">
+
+            The results were disappointing, but I chalked up this initial failure to DuckDuckGo's sometimes inferior indexing, and turned to Google. . .
+
+            <img src="img/journal/009.jpg" class="rounded img-fluid" alt="Google finding no results for the PCB's Part number">
+
+            . . . which gave equally disappointing results. I decided to loosen up the search parameters by removing the 
+            quotation marks, and was presented with <a href="https://www.youtube.com/watch?v=yqphxjTINkw">this Youtube video</a> of a review of a children's synthesizer. 
+            Neither the description nor the comments contained the string in question, but the relevance to the dissection was interesting.
+          </p>
+          <h4>Part 2: The LM386</h4>
+          <p class="lead">
+            This one was as easy to find as I had hoped. The LM386 is a Low Voltage Audio Power Amplifier manufactured by Texas Instruments.
+            
+            <img src="img/journal/010.jpg" class="rounded img-fluid" alt="Screenshot of the Texas Instruments Datasheet for the LM386">
+
+            <a href="http://www.ti.com/lit/ds/symlink/lm386.pdf">datasheet</a><br/>
+
+            I would fully expect this keyboard to contain an amplifier, seeing that it is an audio device, but the fact 
+            that this chip isn't "the brains of this operation," so to speak, leaves me worried that the chip doing the 
+            audio processing is hidden under a blob of black epoxy as is so annoyingly common with these devices.
+          </p>
         </div>
       </div>
     </div>
