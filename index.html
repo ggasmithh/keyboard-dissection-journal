@@ -108,6 +108,8 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Dissection</h2>
+          <img src="img/journal/001.jpg" class="rounded img-fluid" alt="The keyboard, the included microphone, and the owner's manual">
+
           <p class="lead">For the dissection of the ZJTL Piano Toy Keyboard, I used the following tools:
             <ul>
               <li>Screwdriver</li>
@@ -121,20 +123,17 @@
           </p>
 
           <p class="lead">
-            <img src="img/journal/001.jpg" class="rounded img-fluid" alt="The keyboard, the included microphone, and the owner's manual">
 
             We begin the dissection by removing the nine screws in the back of the piano's body, as well as the screw 
             holding the battery compartment closed. I anticipate that the manufacturer has hidden a screw beneath it.
           </p>
 
-          <h3>Front Matter</h3>
-          <p class="lead">
+          <p>
             These screws seem particularly small, so I will be using a 000 Phillips Head bit.
 
             <img src="img/journal/002.jpg" class="rounded img-fluid" alt="The back of the keyboard">
-            <img src="img/journal/003.jpg" class="rounded img-fluid" alt="The screw hiding in the battery compartment">
-
             My previous suspicion confirmed. This brings the screw count up to 10, or 11 if you include the battery compartment cover's.
+            <img src="img/journal/003.jpg" class="rounded img-fluid" alt="The screw hiding in the battery compartment">
 
             <img src="img/journal/004.jpg" class="rounded img-fluid" alt="The back of the keyboard with all screws removed">
 
@@ -149,14 +148,16 @@
 
             I'm not sure what I was expecting, but it wasn't this. I understood that this would likely be a very simple system, not this simple.
 
-            <img src="img/journal/005.jpg" class="rounded img-fluid" alt="The keyboard, opened">
-            
+          </p>
+          <p>
             Immediately, I notice that one of the speakers. . . well. . . does not actually exist; one of the sets of holes made for sound to pass through was included only for aesthetic purposes.
+            <img src="img/journal/005.jpg" class="rounded img-fluid" alt="The keyboard, opened">
+
+            Additionally, it seems that all components are wired to this <em>one</em> board. I'm still wondering how this 
+            thing manages to have <em>twenty-four</em> demo songs stored on it, not to mention (what I assume at this stage of my understanding of this product) all the wave-tables for each instrument.
 
             <img src="img/journal/006.jpg" class="rounded img-fluid" alt="The close up of the PCB inside the keyboard">
 
-            Additionally, it seems that all components are wired to this <it>one</it> board. I'm still wondering how this 
-            thing manages to have <it>twenty-four</it> demo songs stored on it, not to mention (what I assume at this stage of my understanding of this product) all the wave-tables for each instrument.
 
             <img src="img/journal/007.jpg" class="rounded img-fluid" alt="The close up of the part number on the PCB">
 
@@ -167,7 +168,7 @@
               <li>The screenprinting on the IC</li>
             </ol>
           </p>
-          <p class="lead">
+          <p>
             My camera phone is only capable of so much (and I have misplaced every free clip-on camera phone lens I have received from recruiters at job fairs), so you will have to trust me when I say that it reads:
 
             <p class="text-monospace">
@@ -183,7 +184,8 @@
             The part number and date listed on the board itself interested me the most, so I plugged it into a search engine:
 
             <img src="img/journal/008.jpg" class="rounded img-fluid" alt="Duck Duck Go finding no results for the PCB's Part number">
-
+          </p>
+          <p>
             The results were disappointing, but I chalked up this initial failure to DuckDuckGo's sometimes inferior indexing, and turned to Google. . .
 
             <img src="img/journal/009.jpg" class="rounded img-fluid" alt="Google finding no results for the PCB's Part number">
@@ -199,11 +201,66 @@
             <img src="img/journal/010.jpg" class="rounded img-fluid" alt="Screenshot of the Texas Instruments Datasheet for the LM386">
 
             <a href="http://www.ti.com/lit/ds/symlink/lm386.pdf">datasheet</a><br/>
-
+          </p>
+          <p>
             I would fully expect this keyboard to contain an amplifier, seeing that it is an audio device, but the fact 
             that this chip isn't "the brains of this operation," so to speak, leaves me worried that the chip doing the 
             audio processing is hidden under a blob of black epoxy as is so annoyingly common with these devices.
           </p>
+
+          <h3>Further dissection</h3>
+          <p class="lead">
+            The details concerning the audio amplifier and its supporting
+            components are interesting, but can be analyzed later. Let's continue dissecting the piano.
+            
+            The screw holding the amplification circuit board in place is a little bit bigger, so I'm switching to a PH0 bit.
+            <img src="img/journal/011.jpg" class="rounded img-fluid" alt="Screwdriver with PH0 and PH00 bits">
+            
+          </p>
+          <p>
+            <img src="img/journal/012.jpg" class="rounded img-fluid" alt="Underside of amplification circuit">
+            The audio-processing chip is nowhere to be found, and my fear of the inevitable IC-under-a-black-blob grows.
+
+            After some more thorough looking, I find it. The audio processing chip, hiding in plain sight (bringing our circuit-count up to two).
+            <img src="img/journal/013.jpg" class="rounded img-fluid" alt="Audio processing circuit">
+            My fears are once again confirmed; the chip is encased in black epoxy. I'm almost certain that this is the chip we are looking for,
+            as the keyboard buttons, the mic input, and the amplification circuit all connect to it.
+
+            My disappointment turns me back to looking up solutions to this problem. 
+            I find <a href="https://electronics.stackexchange.com/questions/108940/reverse-engineer-how-do-i-remove-the-black-plastic-that-hides-the-ics">an answer on stack exchange</a>, 
+            which suggests one of the two following methods:
+
+            <ol>
+              <li>Use a hotplate, nitric acid, and a rotary tool to remove the epoxy (all of which I am in short supply of and can neither reasonably acquire nor set up a safe environment in which to use them)</li>
+              <li>Use a heat-gun and an X-acto knife. I have both of these, but it destroys the chip's bonding wires (we need those)</li>
+            </ol>
+
+            I am left solutionless. Fortunately, we have more-or-less a free pin-out if we can 
+            <em><u>carefully</u></em> strip parts of these ribbon cables. This sounds like a tedious 
+            process that I will hand off to future-me.
+          </p>
+          <h3>Dissection Aside: how is that PCB being held on?</h3>
+          <p class="lead">
+            From the image above, we cannot really tell <em>how</em> the circuit board holding the apparent audio 
+            processing chip is being held in place; there aren't any screws, any 90-degree brackets, or any other
+            mechanical feature. In fact, it seems like this chip has just been placed in a slot.
+          </p>
+
+          <p>
+          To find out, we will unscrew the four screws (one is hidden beneath the ribbon cable) holding this long PCB in place
+          <img src="img/journal/014.jpg" class="rounded img-fluid" alt="Interior of piano">
+
+          Indeed, the smaller PCB is simply slotted into the larger one, with some mechanical soldering points to join them.
+          <img src="img/journal/015.jpg" class="rounded img-fluid" alt="Underside of button PCB and audio procesing PCB">
+          It seems like that this is the PCB that holds all of the non-key buttons of the keyboard (other than the power button).
+          As far as I can tell, these are capacitive switches, which are very cheap and easy to manufacture, and are fairly durable
+           and long-lasting, depending on the operation environment.
+
+          </p>
+
+
+
+
         </div>
       </div>
     </div>
