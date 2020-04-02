@@ -122,7 +122,7 @@
 
           </p>
 
-          <p class="lead">
+          <p>
 
             We begin the dissection by removing the nine screws in the back of the piano's body, as well as the screw 
             holding the battery compartment closed. I anticipate that the manufacturer has hidden a screw beneath it.
@@ -251,14 +251,58 @@
           <img src="img/journal/014.jpg" class="rounded img-fluid" alt="Interior of piano">
 
           Indeed, the smaller PCB is simply slotted into the larger one, with some mechanical soldering points to join them.
-          <img src="img/journal/015.jpg" class="rounded img-fluid" alt="Underside of button PCB and audio procesing PCB">
+          <img src="img/journal/015.jpg" class="rounded img-fluid" alt="Underside of button PCB and audio processing PCB">
           It seems like that this is the PCB that holds all of the non-key buttons of the keyboard (other than the power button).
           As far as I can tell, these are capacitive switches, which are very cheap and easy to manufacture, and are fairly durable
-           and long-lasting, depending on the operation environment.
-
+          and long-lasting, depending on the operation environment.
           </p>
 
+          <p class="lead">Only one electronic piece remains to be dissected.</p>
 
+          <img src="img/journal/016.jpg" class="rounded img-fluid" alt="Interior of the piano, detailing the keyboard PCB">
+
+          <p>
+            Specifically, the long PCB that presumably holds the switches that each of the plastic keys presses down.
+
+            <img src="img/journal/017.jpg" class="rounded img-fluid" alt="Interior of the piano, detailing the keyboard PCB with switches exposed">
+
+            Indeed, capacitive switches similar to those found underneath the operation buttons are housed on this PCB. 
+            Interestingly enough, this PCB has some sort of part number, as well as a date.
+
+            <img src="img/journal/018.jpg" class="rounded img-fluid" alt="Part number and date on keyboard PCB">
+
+            I'll spare the reader the details, but searches performed on this part number were equally as fruitless as 
+            previous attempts to do so for other parts analyzed in this dissection.
+          </p>
+
+          <p class="lead">
+            I was mistaken, there remains one final dissect-able electronic component.
+          </p>
+
+          <p>
+            <img src="img/journal/019.jpg" class="rounded img-fluid" alt="Power button PCB">
+          </p>
+
+          <p>
+            The power button for this keyboard, funnily enough, is soldered onto its own PCB&mdash;by two of its six connections.
+            From the number of leads coming off of this switch, I have to assume that this is a Double-Pole Double-Throw 
+            switch. . . being used as. . . a Single-Pole Single-Throw switch. . . .
+          </p>
+
+          <p class="lead">With all of the electronic components explored, we remove the remaining mechanical parts.</p>
+          
+          <p>
+            <img src="img/journal/020.jpg" class="rounded img-fluid" alt="Keyboard completely dissected">
+            This concludes the dissection of the ZJTL Piano Toy Keyboard. We dissected all parts except for:
+
+            <ol>
+              <li>The microphone (not part of the keyboard, difficult to non-destructively disassemble, and I would be willing to bet money that it's just a Piezo-electric sensor inside)</li>
+              <li>The microphone input (nothing to dissect)</li>
+              <li>The speaker (plastic-welded into the body, impossible to non-destructively disassemble, and I don't have the supplies to reconstruct a speaker cone)</li>
+            </ol>
+
+
+          </p>
 
 
         </div>
