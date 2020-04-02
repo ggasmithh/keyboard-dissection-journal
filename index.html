@@ -45,12 +45,6 @@
             <a class="nav-link js-scroll-trigger" href="#analysis">Analysis</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#sandd">Schematics and Diagrams</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#bom">Bill of Materials</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#reassembly">Reassembly</a>
           </li>
         </ul>
@@ -74,9 +68,9 @@
           <p class="lead"> My name is Garrett Smith. I am a senior pursuing a degree in Computer 
             Engineering, minors in Math and Global Engineering Leadership, and a 
             certification in Information Assurance.</p>
-          <p class="lead">This website serves as a record of work performed during the 
+          <p>This website serves as a record of work performed during the 
             dissection and analysis of a small, electronic piano. The dissection 
-            and analysis&mdash;as well as the writing of the website&mdash;were performed 
+            and analysis&mdash;as well as the creation of this website&mdash;were performed 
             according to the requirements, listed 
             <a href="https://courses.ece.msstate.edu/ece4723/dissect/">here</a>.
           </p>
@@ -326,29 +320,36 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Analysis</h2>
-          <p class="lead">This is where the Analysis section will go.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="sandd" class="bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Schematics and Diagrams</h2>
-          <p class="lead">This is where the Schematics & Diagrams section will go.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+          <p class="lead">
+            First, a look at the structure of the device from a high-level point of view.
 
-  <section id="bom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Bill of Materials</h2>
-          <p class="lead">This is where the Bill of Materials section will go.</p>
+            <img src="img/diagrams/hl.png" class="rounded img-fluid" alt="High level diagram of keyboard">
+
+          </p>
+
+          <h3>Component-Level Analysis</h3>
+          <p class="lead">
+            Unfortunately, due to COVID-19, I do not have access to the lab equipment 
+            normally available, so the analysis will mostly be done via datasheet analysis, 
+            rather than measurement.
+          </p>
+
+          <p>
+            Attempts to measure resistors using my digital multimeter were unsuccessful, 
+            so these will also have to be identified by
+            <ol>
+              <li>Searching part numbers</li>
+              <li>Reasonably deducing resistance values from the components it is attached to</li>
+            </ol>
+
+            As an example of the second method of identification listed here, we can reasonably deduce that resistor X
+            must be within the neighborhood of Y ohms, because the datasheet of component Z says that a certain pin 
+            requires that resistance. This exact reasoning is likely how most components of the audio amplification circuit will be identified.
+          </p>
+
+          <h4>The audio amplification circuit</h4>
+
         </div>
       </div>
     </div>
