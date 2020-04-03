@@ -327,11 +327,33 @@
             <img src="img/diagrams/hl.png" class="rounded img-fluid" alt="High level diagram of keyboard">
 
           </p>
+          <p>
+            As for a block-level diagram of the keyboard operation, the above high-level diagram would also map pretty 
+            well, but we should include the batteries.
+
+            <img src="img/diagrams/bl.png" class="rounded img-fluid" alt="Block-level diagram of electrical systems">
+          </p>
+
+          <h3>Operational Measurements</h3>
+          <p class="lead">
+            Theoretically, with 4 AA batteries in series, we should be pulling roughly 6V. 
+            This seems to be the case as my multimeter reads 5.84V fairly consistently, and the 
+            most common setups of the audio amplification circuit according to LM386 datasheet.
+            show a 5V source being used.
+          </p>
+
+          <p>
+            An oscilloscope would be ideal for measuring frequencies, but due to COVID-19, I'll make due with an iPhone
+            piano tuning app (I would take pictures of this process if I weren't using this app on the only camera device that I own).
+
+            The piano tuning app recorded the lowest possible frequency produced by the keyboard as 145Hz, and the highest as 1160Hz.
+
+          </p>
 
           <h3>Component-Level Analysis</h3>
           <p class="lead">
             Unfortunately, due to COVID-19, I do not have access to the lab equipment 
-            normally available, so the analysis will mostly be done via datasheet analysis, 
+            normally available, so the analysis will mostly be done via datasheet analysis and guesstimations 
             rather than measurement.
           </p>
 
