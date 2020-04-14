@@ -9,7 +9,9 @@ Because it's for a grade lmao (It is a fun project, though :))
 
 # how?
 Bootstrap, and someone else's code. Specifically, Blackrock Digital LLC's scrolling-nav theme, found here:
-https://github.com/BlackrockDigital/startbootstrap-scrolling-nav
+https://github.com/BlackrockDigital/startbootstrap-scrolling-nav. Wonderful work by Blackrock Digital.
+
+This repo also benefits from Imgbot integration, which I highly recommend for any image-heavy projects: https://github.com/marketplace/imgbot
 
 ## no, I was talking about the dissection
 I just followed the process detailed here: https://courses.ece.msstate.edu/ece4723/dissect/
