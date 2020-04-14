@@ -215,11 +215,11 @@
           </p>
           <h4>Part 2: The LM386</h4>
           <p class="lead">
-            This one was as easy to find as I had hoped. The LM386 is a Low Voltage Audio Power Amplifier manufactured by Texas Instruments.
+            This one was as easy to find as I had hoped. The LM386 is a Low Voltage Audio Power Amplifier manufactured by Texas Instruments (<a href="http://www.ti.com/lit/ds/symlink/lm386.pdf">with a datasheet!</a>)<br/>.
             
             <img src="img/journal/010.jpg" class="rounded img-fluid" alt="Screenshot of the Texas Instruments Datasheet for the LM386">
 
-            <a href="http://www.ti.com/lit/ds/symlink/lm386.pdf">datasheet</a><br/>
+            
           </p>
           <p>
             I would fully expect this keyboard to contain an amplifier, seeing that it is an audio device, but the fact 
@@ -335,7 +335,88 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Operation</h2>
-          <p class="lead">This is where the operation section will go.</p>
+          <p class="lead">
+            Unfortunately, I made the error of deciding to record the operation of the keyboard after 
+            the re-assembly stage of this dissection. At the time of writing, the keyboard operational buttons
+             (Tone, Volume, Tempo, and Effect), do not work, and the keyboard itself only works somewhat.
+          </p>
+
+          <p>
+            Fortunately, I am able to remember a good deal of how each button behaves, 
+            and the product details give us enough information to fill in the blanks. 
+            At the very least, I will know to record such information <em>before</em> dissection rather than after for 
+            inevitable future disassemblies of the ZJTL Piano Toy Keyboard.
+          </p>
+
+          <h3>The Keyboard as collection of state machines</h3>
+
+          For the most part, the buttons of the keyboard operate as separate state machines, which then communicate 
+          their state to the audio processing MCU.
+
+          <h4>The Tone Button</h4>
+
+          <img src="img/ops/tone.png" class="rounded img-fluid" alt="Tone button represented as state machine">
+          <p>
+            The keyboard is capable of playing notes in three different tones. One of which is a classic piano type sound, 
+            another being a string instrument, and a third being something that I can only describe as a saw wave of some sort.
+          </p>
+
+          <h4>The Volume Button</h4>
+          <img src="img/ops/volume.png" class="rounded img-fluid" alt="Volume button represented as state machine">
+          <p>
+            The behavior of the volume button is equally straightforward, acting as a state machine isomorphic to that of the Tone button.
+          </p>
+
+          <h4>The Tempo Button</h4>
+          <img src="img/ops/tempo.png" class="rounded img-fluid" alt="Tempo button represented as state machine">
+          <p>
+            The tempo button is yet another case of Same State Machine, Different Day. I would have like to have recorded 
+            the exact BPM of each tempo setting but I am unable due to reasons previously mentioned.
+          </p>
+
+          <h4>The Effect Button</h4>
+          <p>
+            I cannot remember for the life of me what this button does. Then again, I was equally confused as to its 
+            affect on the keyboard sound when it was still usable.
+          </p>
+
+          <h4>The Lesson/Rhythm Button</h4>
+          <img src="img/ops/rhythm.png" class="rounded img-fluid" alt="Lesson/Rhythm button represented as state machine">
+          <p>
+            This button cycles through the 24 available backing tracks which consist of various drum sounds.
+          </p>
+
+          <h4>The "Demo One", "Demo All" and "Stop" Buttons</h4>
+          <p class="lead">I lump these together because of their lack of statefulness.</p>
+
+          <h5>Demo One</h5>
+          <p>
+            This button picks one of the keyboard's built-in Demos at random and plays it. A demo is defined here as one of the 
+            8 rhythms in combination with a pre-recorded piano melody, using any combination of tone, tempo and effect.
+          </p>
+
+          <h5>Demo All</h5>
+          <p>
+            This button plays all demos in the manner previously described, but sequentially, rather than at random. 
+            If interrupted the sequence does not continue where it left off, but rather at the beginning.
+          </p>
+
+          <h5>Stop</h5>
+          <p>
+            This button stops any audio playback that isn't a direct result of the user pressing the keys. This applies to 
+            <ul>
+              <li>Rhythms</li>
+              <li>Singular Demos</li>
+              <li>Sequences of Demos</li>
+            </ul>
+          </p>
+
+          <h3>The Microphone</h3>
+          <p>The microphone is actually fairly simple in operation. Any input from a plugged in microphone is 
+            passed through the speakers at whatever volume is currently selected. 
+            This does not interfere with played notes, rhythms, or demos.
+          </p>
+
         </div>
       </div>
     </div>
@@ -488,13 +569,6 @@
               <th>$26.069</tg>
             </tr>
           </table>
-
-
-
-
-
-          
-
         </div>
       </div>
     </div>
