@@ -251,7 +251,7 @@
             which suggests one of the two following methods:
 
             <ol>
-              <li>Use a hotplate, nitric acid, and a rotary tool to remove the epoxy (all of which I am in short supply of and can neither reasonably acquire nor set up a safe environment in which to use them)</li>
+              <li>Use a hotplate, a solution of nitric acid and distilled water , and a rotary tool to remove the epoxy (all of which I am in short supply of and can neither reasonably acquire nor set up a safe environment in which to use them)</li>
               <li>Use a heat-gun and an X-acto knife. I have both of these, but it destroys the chip's bonding wires (we need those)</li>
             </ol>
 
@@ -455,6 +455,74 @@
 
             The piano tuning app recorded the lowest possible frequency produced by the keyboard as 145Hz, and the highest as 1160Hz.
 
+          </p>
+
+          <h3>Components used</h3>
+          <p class="lead">
+            Unfortunately, yet another curveball from Zhejiang Tianlong Optoelectronics Technology Co. Ltd. impedes our dissection and analysis.
+            For some reason&mdash;I have been wracking my brain for a sensible one&mdash;the manufacturer has chosen to coat the PCB in a thin 
+            layer of plastic or otherwise non-conductive material. My multimeter worked fine on bare metal for measuring the voltage of the 
+            battery cells and the impedance of the speaker (4 ohms), otherwise I would chalk all of this up to user error. 
+            In context with my general inability to identify components (other than the LM386), then maybe this isn't so bad.
+          </p>
+
+          <p>
+            With all of that out of the way, let's look at an approximate bill of materials. All prices are based off of Digikey estimates. 
+            In situations where there are multiple suitable options, the price of the cheapest option with a minimum order of 1 unit is used. 
+            If nothing fitting this criteria exists, then a straight average of the cost of all viable substitutes is taken.
+          </p>
+          <p>
+            The MCU is where the guesstimation gets tricky. From previous experience and interest in the "circuit bending" or modification of 
+            toy electronic instruments, I know that the Intel 8051 microcontrollers and its clones (especially its clones) are extremely 
+            common in these devices. 
+          </p>
+
+            <table class="table">
+              <tr>
+                <th>Part</th>
+                <th>Cost</th>
+              </tr>
+              <tr>
+                <td>LM386</td>
+                <td>$1.00</td>
+              </tr>
+              <tr>
+                <td>Microphone Input Jack</td>
+                <td>$0.58</td>
+              </tr>
+              <tr>
+                <td>1.5" Diameter Speaker</td>
+                <td>$1.50</td>
+              </tr>
+              <tr>
+                <td>Generic 8051 Microcontroller</td>
+                <td>$1.50</td>
+              </tr>
+              <tr>
+                <td>2x Electrolytic Capacitors</td>
+                <td>$0.50</td>
+              </tr>
+              <tr>
+                <td>4x Surface Mount Capacitors</td>
+                <td>$0.25</td>
+              </tr>
+              <tr>
+                <td>6x Surface Mount Resistors</td>
+                <td>$0.50</td>
+              </tr>
+              <tr>
+                <td>Through-Hole Diode</td>
+                <td>$0.20</td>
+              </tr>
+              <tr>
+                <td>DPDT Pushbutton Switch</td>
+                <td>$2.00</td>
+              </tr>
+              <tr>
+                <th>Total</th>
+                <th>$8.03</tg>
+              </tr>
+            </table>
           </p>
 
           <h2>Mechanical Bill of Materials</h2>
