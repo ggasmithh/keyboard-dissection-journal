@@ -74,7 +74,7 @@
           <p>This website serves as a record of work performed during the 
             dissection and analysis of a small, electronic piano. The dissection 
             and analysis&mdash;as well as the creation of this website&mdash;were performed 
-            according to the requirements, listed 
+            according to the project requirements listed 
             <a href="https://courses.ece.msstate.edu/ece4723/dissect/">here</a>.
           </p>
         </div>
@@ -340,8 +340,9 @@
           <h2>Operation</h2>
           <p class="lead">
             Unfortunately, I made the error of deciding to record the operation of the keyboard after 
-            the re-assembly stage of this dissection. At the time of writing, the keyboard operational buttons
-             (Tone, Volume, Tempo, and Effect), do not work, and the keyboard itself only works somewhat.
+            the reassembly stage of this dissection. Although the keyboard was fully functional immediately after reassembly,
+            at the time of writing, the keyboard operational buttons (Tone, Volume, Tempo, and Effect) do not work, and the 
+            piano keys only work somewhat.
           </p>
 
           <p>
@@ -386,7 +387,7 @@
           <h4>The Lesson/Rhythm Button</h4>
           <img src="img/ops/rhythm.png" class="rounded img-fluid" alt="Lesson/Rhythm button represented as state machine">
           <p>
-            This button cycles through the 24 available backing tracks which consist of various drum sounds.
+            This button cycles through the 8 available backing tracks which consist of various drum sounds.
           </p>
 
           <h4>The "Demo One", "Demo All" and "Stop" Buttons</h4>
@@ -395,7 +396,8 @@
           <h5>Demo One</h5>
           <p>
             This button picks one of the keyboard's built-in Demos at random and plays it. A demo is defined here as one of the 
-            8 rhythms in combination with a pre-recorded piano melody, using any combination of tone, tempo and effect.
+            8 rhythms in combination with a pre-recorded piano melody, using any combination of tone, tempo and effect. In 
+            total, there are 24 different Demos.
           </p>
 
           <h5>Demo All</h5>
@@ -457,12 +459,12 @@
           <p class="lead">
             Theoretically, with 4 AA batteries in series, we should be pulling roughly 6V. 
             This seems to be the case as my multimeter reads 5.84V fairly consistently, and the 
-            most common setups of the audio amplification circuit according to LM386 datasheet.
+            most common setups of the audio amplification circuit according to LM386 datasheet
             show a 5V source being used.
           </p>
 
           <p>
-            An oscilloscope would be ideal for measuring frequencies, but due to COVID-19, I'll make do with an iPhone
+            An oscilloscope from the laboratory would be ideal for measuring frequencies, but due to shelter-in-place, I'll make do with an iPhone
             piano tuning app (I would take pictures of this process if I weren't using this app on the only camera device that I own).
 
             The piano tuning app recorded the lowest possible frequency produced by the keyboard as 145Hz, and the highest as 1160Hz.
@@ -473,7 +475,7 @@
           <p class="lead">
             Unfortunately, yet another curveball from Zhejiang Tianlong Optoelectronics Technology Co. Ltd. impedes our dissection and analysis.
             For some reason&mdash;I have been wracking my brain for a sensible one&mdash;the manufacturer has chosen to coat the PCB in a thin 
-            layer of plastic or otherwise non-conductive material. My multimeter worked fine on bare metal for measuring the voltage of the 
+            layer of plastic or similarly non-conductive material. My multimeter worked fine on bare metal for measuring the voltage of the 
             battery cells and the impedance of the speaker (4 ohms), otherwise I would chalk all of this up to user error. 
             In context with my general inability to identify components (other than the LM386), then maybe this isn't so bad.
           </p>
@@ -595,9 +597,9 @@
 
             <img src="img/bill-of-materials/scale-example.png" class="rounded img-fluid" alt="Demonstration of economy of scale, in which overall costs are increased in exchange of a drastic decrease of cost per part.">
 
-            As we can see above, it pays in dividends to have pre-existing capital, and ownership of the means of production <em>literally</em> generates wealth.
+            As we can see above, it pays in dividends to have pre-existing capital.
             With a small investment of <em>Seventy-Seven Million US Dollars</em>, the cost per part plummets. 
-            The cost of the raw material decreases very little, but the labor and tooling cost per part decrease by orders of magnitude.
+            Although the cost of the raw material decreases very little, but the labor and tooling cost per part decrease by orders of magnitude.
           </p>
 
           <p>
@@ -776,7 +778,7 @@
           <h3>On the simplicity of the device</h3>
           <p>
             While the extreme simplicity (in addition to other limitations of the project) of the device made the dissection 
-            and analysis process lack "meat," it somewhat became a blessing in disguise. Had the keyboard had been as simple as I had 
+            and analysis process lack "meat," it turned out to be a blessing in disguise. Had the keyboard had been as simple as I had 
             anticipated when I ordered it (or even more complex), the analysis, dissection, and partial identification of parts would
             have been even worse off. Between these things, lack of access to laboratory equipment, and a wrist strain injury flaring up
             during this project, the complexity of this device ended up being the exact right amount.
